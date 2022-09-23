@@ -77,6 +77,7 @@ const Mint = () => {
   const [merkle, setMerkle] = useState([])
   const [claimingNft, setClaimingNft] = useState(false)
   const [feedback, setFeedback] = useState(`Click buy to mint your NFT.`)
+  const [isTime, setIsTime] = useState(false)
   const [mintAmount, setMintAmount] = useState(1)
   const [CONFIG, SET_CONFIG] = useState({
     CONTRACT_ADDRESS: '',
@@ -94,6 +95,19 @@ const Mint = () => {
     MARKETPLACE_LINK: '',
   })
 
+  const getTime = () => {
+    let nowDate = new Date()
+    console.log('時刻', nowDate.getTime())
+    let wlDate = new Date(2022, 9, 24, 21, 0)
+    console.log('WL Mint時刻', wlDate.getTime())
+    let pubDate = new Date(2022, 9, 25, 7, 0)
+    console.log('PubMint時刻', pubDate)
+    setIsTime(true) //本番では消す
+    if (wlDate.getTime() < nowDate.getTime()) {
+      setIsTime(true)
+    }
+  }
+
   const { indicatorEl } = useLoading({
     loading: claimingNft,
     indicator: <Oval width="24" />,
@@ -105,6 +119,11 @@ const Mint = () => {
     let method = null
     let totalCostWei = new BN(cost.toString()).muln(mintAmount)
     let totalGasLimit = String(gasLimit * mintAmount)
+
+    if (mintAmount > 5) {
+      alert('上限枚数は5枚までです。')
+      return
+    }
     setFeedback(`Minting your ${CONFIG.NFT_NAME}...`)
     setClaimingNft(true)
     if (data.presale) {
@@ -191,6 +210,7 @@ const Mint = () => {
 
   useEffect(() => {
     getConfig()
+    getTime()
   }, [])
 
   useEffect(() => {
@@ -260,7 +280,9 @@ const Mint = () => {
           getData()
         }}
       >
-        <BuyButtonContent>{claimingNft ? indicatorEl : 'BUY'}</BuyButtonContent>
+        <BuyButtonContent>
+          {claimingNft ? indicatorEl : isTime ? 'Buy' : 'Coming Soon'}
+        </BuyButtonContent>
       </StyledButton>
     )
   }
@@ -412,11 +434,11 @@ const Mint = () => {
             color: 'var(--accent)',
           }}
         >
-          Pre/Public Price: 0.01ETH
+          WL Price: 0.001ETH Public Price:0.003ETH
           <br />
-          WhiteList Max: 10 NFTs per address
+          WhiteList Max: 5 NFTs per address
           <br />
-          Public Max: 10 NFTs per Transaction
+          Public Max: 10 NFTs per address
         </s.TextDescription>
         <s.SpacerMedium />
         <s.TextDescription
