@@ -9,6 +9,7 @@
 
 .container {
   padding-top: 30px;
-  max-width: 760px;
+  max-width: 1080px;
+  min-height: 100vh;
   text-align: center;
 }
