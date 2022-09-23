@@ -3,6 +3,9 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useLoading, Oval } from '@agney/react-loading'
 import { connect } from './redux/blockchain/blockchainActions'
 import { fetchData } from './redux/data/dataActions'
+
+import Container from '@mui/material/Container'
+
 import * as s from './styles/globalStyles'
 import styled from 'styled-components'
 import BN from 'bn.js'
@@ -59,6 +62,25 @@ export const ResponsiveWrapper = styled.div`
   }
 `
 
+export const StyledImg = styled.img`
+  box-shadow: 0px 2px 5px 2px rgba(0, 0, 0);
+  border: 4px solid white;
+  background-color: var(--accent);
+  border-radius: 100%;
+  width: 150px;
+  margin: 5px;
+  @media (max-width: 500px) {
+    display: none;
+  }
+  @media (min-width: 900px) {
+    width: 200px;
+  }
+  @media (min-width: 1000px) {
+    width: 250px;
+  }
+  transition: width 0.5s;
+`
+
 export const StyledLink = styled.a`
   color: var(--secondary);
   text-decoration: none;
@@ -73,7 +95,6 @@ const Mint = () => {
   const dispatch = useDispatch()
   const blockchain = useSelector((state) => state.blockchain)
   const data = useSelector((state) => state.data)
-  console.log(data)
   const [merkle, setMerkle] = useState([])
   const [claimingNft, setClaimingNft] = useState(false)
   const [feedback, setFeedback] = useState(`Click buy to mint your NFT.`)
@@ -97,11 +118,8 @@ const Mint = () => {
 
   const getTime = () => {
     let nowDate = new Date()
-    console.log('時刻', nowDate.getTime())
     let wlDate = new Date(2022, 9, 24, 21, 0)
-    console.log('WL Mint時刻', wlDate.getTime())
     let pubDate = new Date(2022, 9, 25, 7, 0)
-    console.log('PubMint時刻', pubDate)
     setIsTime(true) //本番では消す
     if (wlDate.getTime() < nowDate.getTime()) {
       setIsTime(true)
@@ -280,9 +298,7 @@ const Mint = () => {
           getData()
         }}
       >
-        <BuyButtonContent>
-          {claimingNft ? indicatorEl : isTime ? 'Buy' : 'Coming Soon'}
-        </BuyButtonContent>
+        <BuyButtonContent>{claimingNft ? indicatorEl : 'Buy'}</BuyButtonContent>
       </StyledButton>
     )
   }
@@ -301,7 +317,6 @@ const Mint = () => {
           {data.presale ? 'PRESALE LIVE!' : 'PUBLIC SALE LIVE!'}
         </s.TextDescription>
         <s.SpacerSmall />
-
         <s.TextDescription
           style={{
             textAlign: 'center',
@@ -364,74 +379,98 @@ const Mint = () => {
   }
 
   return (
-    <ResponsiveWrapper style={{ padding: 24 }} test>
-      <s.Container
-        flex={2}
-        jc={'center'}
-        ai={'center'}
-        style={{
-          backgroundColor: 'rgba(2,30,11,0.7)',
-          padding: 24,
-          borderRadius: 24,
-          border: '0px dashed var(--secondary)',
+    <>
+      <Container
+        sx={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-evenly',
         }}
       >
-        <s.TextTitle
+        <img width="75%" height="10%" src="/config/images/moe.png" />
+      </Container>
+      <Container
+        sx={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-evenly',
+        }}
+      >
+        <StyledImg alt={'example'} src={'/config/images/example.gif'} />
+
+        <Container
+          flex={2}
+          jc={'center'}
+          ai={'center'}
           style={{
-            textAlign: 'center',
-            color: 'var(--secondary)',
+            backgroundColor: 'rgba(2,30,11,0.7)',
+            padding: 24,
+            borderRadius: 24,
+            border: '0px dashed var(--secondary)',
+            maxWidth: 450,
+            width: '60%',
           }}
         >
-          Mintlist sale: TBA <br />
-          Public sale: TBA JST
-        </s.TextTitle>
-        <s.SpacerSmall />
-        <s.TextTitle
-          style={{
-            textAlign: 'center',
-            fontSize: 50,
-            fontWeight: 'bold',
-            color: 'var(--accent-text)',
-          }}
-        >
-          {data.totalSupply} / {CONFIG.MAX_SUPPLY}
-        </s.TextTitle>
-        <s.TextDescription
-          style={{
-            textAlign: 'center',
-            color: 'var(--primary-text)',
-          }}
-        >
-          <StyledLink target={'_blank'} href={CONFIG.SCAN_LINK}>
-            {truncate(CONFIG.CONTRACT_ADDRESS, 15)}
-          </StyledLink>
-        </s.TextDescription>
-        <s.SpacerSmall />
-        {Number(data.totalSupply) >= CONFIG.MAX_SUPPLY ? (
           <s.TextTitle
+            style={{
+              textAlign: 'center',
+              color: 'var(--secondary)',
+            }}
+          >
+            Mintlist sale: TBA <br />
+            Public sale: TBA JST
+          </s.TextTitle>
+          <s.SpacerSmall />
+          <s.TextTitle
+            style={{
+              textAlign: 'center',
+              fontSize: 50,
+              fontWeight: 'bold',
+              color: 'var(--accent-text)',
+            }}
+          >
+            {data.totalSupply} / {CONFIG.MAX_SUPPLY}
+          </s.TextTitle>
+          <s.TextDescription
+            style={{
+              textAlign: 'center',
+              color: 'var(--primary-text)',
+            }}
+          >
+            <StyledLink target={'_blank'} href={CONFIG.SCAN_LINK}>
+              {truncate(CONFIG.CONTRACT_ADDRESS, 15)}
+            </StyledLink>
+          </s.TextDescription>
+          <s.SpacerSmall />
+          {Number(data.totalSupply) >= CONFIG.MAX_SUPPLY ? (
+            <s.TextTitle
+              style={{ textAlign: 'center', color: 'var(--accent-text)' }}
+            >
+              The sale has ended.
+            </s.TextTitle>
+          ) : (
+            <MintButton config={CONFIG} />
+          )}
+          <s.SpacerMedium />
+          <s.TextDescription
             style={{ textAlign: 'center', color: 'var(--accent-text)' }}
           >
-            The sale has ended.
-          </s.TextTitle>
-        ) : (
-          <MintButton config={CONFIG} />
-        )}
-        <s.SpacerMedium />
-        <s.TextDescription
-          style={{ textAlign: 'center', color: 'var(--accent-text)' }}
-        >
-          NFT Marketplace
-        </s.TextDescription>
-        <StyledLink target={'_blank'} href={CONFIG.MARKETPLACE_LINK}>
-          {CONFIG.MARKETPLACE}
-        </StyledLink>
-      </s.Container>
+            NFT Marketplace
+          </s.TextDescription>
+          <StyledLink target={'_blank'} href={CONFIG.MARKETPLACE_LINK}>
+            {CONFIG.MARKETPLACE}
+          </StyledLink>
+        </Container>
+        <StyledImg alt={'example'} src={'/config/images/example.gif'} />
+      </Container>
+
       <s.SpacerLarge />
       <s.Container>
         <s.TextDescription
           style={{
             textAlign: 'left',
             color: 'var(--accent)',
+            marginLeft: '7%',
           }}
         >
           WL Price: 0.001ETH Public Price:0.003ETH
@@ -445,6 +484,7 @@ const Mint = () => {
           style={{
             textAlign: 'left',
             color: 'var(--accent)',
+            marginLeft: '7%',
           }}
         >
           Please make sure you are connected to the right network (
@@ -453,7 +493,7 @@ const Mint = () => {
         </s.TextDescription>
         <s.SpacerLarge />
       </s.Container>
-    </ResponsiveWrapper>
+    </>
   )
 }
 
