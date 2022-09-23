@@ -1,8 +1,8 @@
 .background {
   background-color: #f9efff;
-  background-image: url('background.png');
+  background-image: url('background2.png');
   background-position: center center;
-  background-size: 530px auto;
+  background-size: 540px;
   display: flex;
   justify-content: center;
 }
