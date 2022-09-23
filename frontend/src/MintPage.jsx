@@ -73,6 +73,7 @@ const Mint = () => {
   const dispatch = useDispatch()
   const blockchain = useSelector((state) => state.blockchain)
   const data = useSelector((state) => state.data)
+  console.log(data)
   const [merkle, setMerkle] = useState([])
   const [claimingNft, setClaimingNft] = useState(false)
   const [feedback, setFeedback] = useState(`Click buy to mint your NFT.`)
