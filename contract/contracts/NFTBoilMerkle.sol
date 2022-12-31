@@ -14,12 +14,12 @@ import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Pausable.sol";
 import "@openzeppelin/contracts/token/common/ERC2981.sol";
 
 
-contract NFTBoilMerkle is ERC721Enumerable, ERC2981, Ownable, Pausable {
+contract NFTFukubukuro is ERC721Enumerable, ERC2981, Ownable, Pausable {
     using Strings for uint256;
 
-    string public baseURI = "";
+    string public baseURI = "ar://2DSM9G6lNb7KBLlTDA0H-seiR1F1pT98hr9ms6Lif_s";
     uint256 public preCost = 0.01 ether;
-    uint256 public publicCost = 0.02 ether;
+    uint256 public publicCost = 0.01 ether;
 
     bool public revealed;
     bool public presale;
@@ -29,9 +29,9 @@ contract NFTBoilMerkle is ERC721Enumerable, ERC2981, Ownable, Pausable {
     uint96 public royaltyFee = 500;
 
 
-    uint256 constant public MAX_SUPPLY = 5000;
+    uint256 constant public MAX_SUPPLY = 2023;
     uint256 constant public PUBLIC_MAX_PER_TX = 10;
-    uint256 constant public PRESALE_MAX_PER_WALLET = 5;
+    uint256 constant public PRESALE_MAX_PER_WALLET = 10;
     string constant public BASE_EXTENSION = ".json";
     bytes32 public merkleRoot;
 
