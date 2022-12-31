@@ -153,7 +153,7 @@ const Mint = () => {
     } else {
       method = blockchain.smartContract.methods.publicMint(mintAmount)
     }
-    console.log("Data",data.presale)
+  
     method
       .send({
         gasLimit: String(totalGasLimit),
@@ -477,7 +477,7 @@ const Mint = () => {
         >
           WL Price: 0.001ETH Public Price:0.003ETH
           <br />
-          WhiteList Max: 5 NFTs per address
+          WhiteList Max: 10 NFTs per address
           <br />
           Public Max: 10 NFTs per address
         </s.TextDescription>
