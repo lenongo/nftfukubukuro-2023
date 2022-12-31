@@ -4,7 +4,7 @@
   "NETWORK": {
     "NAME": "Goerli",
     "SYMBOL": "ETH",
-    "ID": 5,
+    "ID": 1,
     "DECIMALS": 18,
     "RPC_URL": "https://mainnet.infura.io/v3/1af0150a1cc543b38e7ab03049c02352",
     "BLOCK_EXPLORER_URL": "https://mainnet.etherscan.io/0xf3Dd314A8862F9e22b22FFAE41552E51C682AC49"
