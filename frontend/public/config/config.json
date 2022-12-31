@@ -2,7 +2,7 @@
   "CONTRACT_ADDRESS": "0xf3Dd314A8862F9e22b22FFAE41552E51C682AC49",
   "SCAN_LINK": "https://mainnet.etherscan.io/address/0xf3Dd314A8862F9e22b22FFAE41552E51C682AC49",
   "NETWORK": {
-    "NAME": "Goerli",
+    "NAME": "Mainnet",
     "SYMBOL": "ETH",
     "ID": 1,
     "DECIMALS": 18,
@@ -16,6 +16,6 @@
   "PAUSED": false,
   "MARKETPLACE": "OpenSea",
   "MARKETPLACE_LINK": "https://opensea.io/0x56D5ce4C5d967D5A3AB69912476eA922884095Db",
-  "MAX_MINT_AMOUNT_PRE": 5,
+  "MAX_MINT_AMOUNT_PRE": 10,
   "MAX_MINT_AMOUNT_PUBLIC": 10
 }
