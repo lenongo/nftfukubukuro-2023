@@ -153,6 +153,7 @@ const Mint = () => {
     } else {
       method = blockchain.smartContract.methods.publicMint(mintAmount)
     }
+    console.log("Data",data.presale)
     method
       .send({
         gasLimit: String(totalGasLimit),
