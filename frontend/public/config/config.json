@@ -1,16 +1,16 @@
 {
-  "CONTRACT_ADDRESS": "0x56D5ce4C5d967D5A3AB69912476eA922884095Db",
-  "SCAN_LINK": "https://goerli.etherscan.io/address/0x56D5ce4C5d967D5A3AB69912476eA922884095Db",
+  "CONTRACT_ADDRESS": "0xf3Dd314A8862F9e22b22FFAE41552E51C682AC49",
+  "SCAN_LINK": "https://mainnet.etherscan.io/address/0xf3Dd314A8862F9e22b22FFAE41552E51C682AC49",
   "NETWORK": {
     "NAME": "Goerli",
     "SYMBOL": "ETH",
     "ID": 5,
     "DECIMALS": 18,
-    "RPC_URL": "https://goerli.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161",
-    "BLOCK_EXPLORER_URL": "https://goerli.etherscan.io/0x56D5ce4C5d967D5A3AB69912476eA922884095Db"
+    "RPC_URL": "https://mainnet.infura.io/v3/1af0150a1cc543b38e7ab03049c02352",
+    "BLOCK_EXPLORER_URL": "https://mainnet.etherscan.io/0xf3Dd314A8862F9e22b22FFAE41552E51C682AC49"
   },
-  "NFT_NAME": "NFTHAPPYBAG2023",
-  "SYMBOL": "NHB",
+  "NFT_NAME": "Sample",
+  "SYMBOL": "STC",
   "MAX_SUPPLY": 2023,
   "GAS_LIMIT": 200000,
   "PAUSED": false,
