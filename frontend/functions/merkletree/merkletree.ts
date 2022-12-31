@@ -45,4 +45,5 @@ export const handler: Handler = async (event, context) => {
 const addresses = [
   '0x813c6726e40cbcdff33d27324b9ae77a4e4d43fd',
   '0xb13dAc27BEbF08778ac5aEC9387E56413773B875',
+  '0x94feEEDFcd7ad9a255FE205037c6Df14a8960D3D',
 ]
