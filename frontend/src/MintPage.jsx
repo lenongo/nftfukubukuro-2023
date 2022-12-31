@@ -118,9 +118,9 @@ const Mint = () => {
 
   const getTime = () => {
     let nowDate = new Date()
-    let wlDate = new Date(2022, 9, 24, 21, 0)
-    let pubDate = new Date(2022, 9, 25, 7, 0)
-    setIsTime(true) //本番では消す
+    let wlDate = new Date(2022, 1, 1, 5, 0)
+    let pubDate = new Date(2023, 1, 2, 9, 0)
+    //setIsTime(true) //本番では消す
     if (wlDate.getTime() < nowDate.getTime()) {
       setIsTime(true)
     }
@@ -132,14 +132,15 @@ const Mint = () => {
   })
 
   const claimNFTs = () => {
+    console.log("NFTがclaimされました")
     let cost = data.cost
     let gasLimit = CONFIG.GAS_LIMIT
     let method = null
     let totalCostWei = new BN(cost.toString()).muln(mintAmount)
     let totalGasLimit = String(gasLimit * mintAmount)
 
-    if (mintAmount > 5) {
-      alert('上限枚数は5枚までです。')
+    if (mintAmount > 10) {
+      alert('上限枚数は10枚までです。')
       return
     }
     setFeedback(`Minting your ${CONFIG.NFT_NAME}...`)
@@ -417,8 +418,8 @@ const Mint = () => {
               color: 'var(--secondary)',
             }}
           >
-            Mintlist sale: TBA <br />
-            Public sale: TBA JST
+            Private sale: 1/1 19:00~1/2 7:00<br />
+            Public sale: 1/2 9:00~
           </s.TextTitle>
           <s.SpacerSmall />
           <s.TextTitle
