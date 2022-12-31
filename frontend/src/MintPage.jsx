@@ -396,7 +396,7 @@ const Mint = () => {
           justifyContent: 'space-evenly',
         }}
       >
-        <StyledImg alt={'example'} src={'/config/images/example.gif'} />
+        <StyledImg alt={'example'} src={'/config/images/example.jpg'} />
 
         <Container
           flex={2}
@@ -461,7 +461,7 @@ const Mint = () => {
             {CONFIG.MARKETPLACE}
           </StyledLink>
         </Container>
-        <StyledImg alt={'example'} src={'/config/images/example.gif'} />
+        <StyledImg alt={'example'} src={'/config/images/example.jpg'} />
       </Container>
 
       <s.SpacerLarge />
