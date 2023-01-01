@@ -155,6 +155,7 @@ const Mint = () => {
       method = blockchain.smartContract.methods.publicMint(mintAmount)
     }
   
+    console.log("method",method)
     method
       .send({
         gasLimit: String(totalGasLimit),
