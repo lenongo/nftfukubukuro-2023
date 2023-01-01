@@ -6,7 +6,7 @@
     "SYMBOL": "ETH",
     "ID": 1,
     "DECIMALS": 18,
-    "RPC_URL": "https://eth-goerli.g.alchemy.com/v2/",
+    "RPC_URL": "https://eth-mainnet.g.alchemy.com/v2/yEfu46DbctwTZNT-EexwBAMKWE8yw1KU",
     "BLOCK_EXPLORER_URL": "https://mainnet.etherscan.io/0xf3Dd314A8862F9e22b22FFAE41552E51C682AC49"
   },
   "NFT_NAME": "NFTHappyBag2024",
