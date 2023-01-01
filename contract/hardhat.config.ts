@@ -50,9 +50,9 @@ const config: HardhatUserConfig = {
       chainId: 1,
       accounts: [getEnvVariable('ACCOUNT_PRIVATE_KEY')],
     },
-    rinkeby: {
-      url: process.env['RINKEBY_RPC'] || '',
-      chainId: 4,
+    goerli: {
+      url: 'https://goerli.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161',
+      chainId: 5,
       accounts: [getEnvVariable('ACCOUNT_PRIVATE_KEY')],
     },
     astar: {
