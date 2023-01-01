@@ -252,7 +252,8 @@ const Mint = () => {
             color: 'var(--accent-text)',
           }}
         >
-          Connect to the {CONFIG.NETWORK.NAME} network
+          Connect to the {CONFIG.NETWORK.NAME} network.<br />
+          10NFTs / 1 Wallet.
         </s.TextDescription>
         <s.SpacerSmall />
         <StyledButton
@@ -422,8 +423,8 @@ const Mint = () => {
               color: 'var(--secondary)',
             }}
           >
-            Private sale: 1/1 19:00~1/2 7:00<br />
-            Public sale: 1/2 9:00~
+            Private sale: 1/2 22:00~1/3 7:00<br />
+            Public sale:  1/3 9:00~ 
           </s.TextTitle>
           <s.SpacerSmall />
           <s.TextTitle
@@ -478,7 +479,7 @@ const Mint = () => {
             marginLeft: '7%',
           }}
         >
-          WL Price: 0.00ETH Public Price:0.01ETH
+          WL Price: 0.01ETH Public Price:0.01ETH
           <br />
           WhiteList Max: 10 NFTs per address
           <br />
