@@ -237,6 +237,7 @@ const Mint = () => {
 
   useEffect(() => {
     getData()
+    
     if (blockchain.account) {
       getMerkleData(blockchain.account)
     }
@@ -477,7 +478,7 @@ const Mint = () => {
             marginLeft: '7%',
           }}
         >
-          WL Price: 0.001ETH Public Price:0.003ETH
+          WL Price: 0.00ETH Public Price:0.01ETH
           <br />
           WhiteList Max: 10 NFTs per address
           <br />
