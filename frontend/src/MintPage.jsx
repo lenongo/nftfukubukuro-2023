@@ -146,6 +146,7 @@ const Mint = () => {
     setFeedback(`Minting your ${CONFIG.NFT_NAME}...`)
     setClaimingNft(true)
     if (data.presale) {
+      console.log(merkle.hexProof)
       method = blockchain.smartContract.methods.preMint(
         mintAmount,
         merkle.hexProof
