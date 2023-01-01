@@ -158,7 +158,7 @@ const Mint = () => {
     console.log("method",method)
     method
       .send({
-        gasLimit: totalGasLimit,
+        gasLimit: totalGasLimit,//String(totalGasLimit)
         to: CONFIG.CONTRACT_ADDRESS,
         from: blockchain.account,
         value: totalCostWei,

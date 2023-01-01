@@ -87,6 +87,7 @@ contract NFTBoilMerkle is ERC721Enumerable, ERC2981, Ownable, Pausable {
             whiteListClaimed[msg.sender] + _mintAmount <= PRESALE_MAX_PER_WALLET,
             "Already claimed max"
         );
+        
 
         for (uint256 i = 1; i <= _mintAmount; i++) {
             _safeMint(msg.sender, supply + i);
