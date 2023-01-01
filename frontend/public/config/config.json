@@ -2,14 +2,14 @@
   "CONTRACT_ADDRESS": "0x6AcC9BB7F4c7c5DAC5A6361930F54413dfe9C1D7",
   "SCAN_LINK": "https://mainnet.etherscan.io/address/0xf3Dd314A8862F9e22b22FFAE41552E51C682AC49",
   "NETWORK": {
-    "NAME": "goerli",
+    "NAME": "mainnet",
     "SYMBOL": "ETH",
-    "ID": 5,
+    "ID": 1,
     "DECIMALS": 18,
     "RPC_URL": "https://eth-goerli.g.alchemy.com/v2/",
     "BLOCK_EXPLORER_URL": "https://mainnet.etherscan.io/0xf3Dd314A8862F9e22b22FFAE41552E51C682AC49"
   },
-  "NFT_NAME": "NFTHappyBag",
+  "NFT_NAME": "NFTHappyBag2024",
   "SYMBOL": "NHB",
   "MAX_SUPPLY": 2023,
   "GAS_LIMIT": 200000,
