@@ -124,6 +124,7 @@ export const connect = () => {
         })
         // Add listeners end
       } catch (err) {
+        console.log(err)
         dispatch(connectFailed('Something went wrong.'))
       }
     } else {
