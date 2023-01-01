@@ -27,6 +27,7 @@ const config: HardhatUserConfig = {
       polygonMumbai: process.env['POLYGON_API'] || '',
       mainnet: process.env['ETH_API'] || '',
       rinkeby: process.env['ETH_API'] || '',
+      goerli: process.env['ETH_API'] || '',
     },
   },
   gasReporter: {
