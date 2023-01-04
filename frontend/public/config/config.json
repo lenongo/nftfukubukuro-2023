@@ -11,7 +11,7 @@
   },
   "NFT_NAME": "NFTHappyBag2023",
   "SYMBOL": "NHB",
-  "MAX_SUPPLY": 2023,
+  "MAX_SUPPLY": 1000,
   "GAS_LIMIT": 200000,
   "PAUSED": false,
   "MARKETPLACE": "OpenSea",
